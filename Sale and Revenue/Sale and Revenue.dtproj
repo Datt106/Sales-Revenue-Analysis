@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{abcb9e9c-273f-484b-839d-92dd32d2a85d}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">fact1</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">Sale and Revenue</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-HQ6M3AJR</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANcgaBpxCg0GV7kwjbAh6mwAAAAACAAAAAAAQZgAAAAEAACAAAAChRtxpr0JSk3BfbahoWfE0CRl9vu+hRriaPhSnXAh2FwAAAAAOgAAAAAIAACAAAADDBGY6aNKPJVrKIKDdF7d/SZ/IYif+MwYpyaKoj2DE2JAAAACxIwn8AgESmIUds4orTiekUvV2Z7yA6fUhTvsIxf7sCFhHOYTfKYLOY/KbwHlKMZchJ9NwUh6jO2T1IyG6qrcrROnFhX44CBO+hbYldDmEvUvFLjrlWxPZ0qBTrEbOiBtaImnUuYOVBLwDuQlWmTFGsUoba7cuAgbjOejTiX47f+nXP6sp+NaPlMmofAMgfeRAAAAAhk/8O0SViEuy5QAJVWz+M0tqa2Lz4VgVx3ilVqXxoHxJsnT2coH8PyRsCywoYBGJMLocvXoBWevD3AGlRjly9A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANcgaBpxCg0GV7kwjbAh6mwAAAAACAAAAAAAQZgAAAAEAACAAAABBaWvv/AAnv/2HC0pRVMgPdtjqSwJy+t5RwbH8nIcQvwAAAAAOgAAAAAIAACAAAAA2rCwaqBYRWOqbV5Mp8f/PauERkv1K/QKrn2qke5rN9ZAAAADjl5B5YpoYcv1e2tRvFdse/V+7wjB5sz19u5xubt4hW7Wao/LO1ccimGZaJSHcCdPJKxqf/7ShQljlp2A1p83XyLSHuGuib8ZlVqTC5wqenTDJEzjWIBn+zXSMWdwCMB36/KSY/XtaWm/x/qvnvKTYqA9cZaFecs4ZUg+/29FigkizLWSAF0zGI1HUP+hrpN9AAAAAIevwzy+wBY4cGgkddzFn5lgPphiiZuWqdKmTKC3PooTaI6QRmr0T7fEwxlUQyaGY2jfvtUmjnKmhjbDPyj4voQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
