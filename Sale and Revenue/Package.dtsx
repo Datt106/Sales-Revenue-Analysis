@@ -11,12 +11,449 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{8BF33258-3EFE-4077-8366-DFA82672E054}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{B6F85987-F3CC-4F93-B1AA-61867498BAA0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C3EF50FC-6FFD-489A-B298-2F84DF58E2DC}"
+      DTS:ObjectName="LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HQ6M3AJR\SQLEXPRESS01;Initial Catalog=AdventureWorks2022;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DB51A91E-FB03-4772-9910-965BD5F3ED1C}"
+      DTS:ObjectName="LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HQ6M3AJR\SQLEXPRESS01;Initial Catalog=AdventureWorks2022;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{225B1A20-2313-4726-8122-6FF44B654929}"
+      DTS:ObjectName="LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HQ6M3AJR\SQLEXPRESS01;Initial Catalog=AdventureWorks_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C23CD009-E127-4E53-935E-A6E979D0DD06}"
+      DTS:ObjectName="LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-HQ6M3AJR\SQLEXPRESS01;Initial Catalog=AdventureWorks_DWH;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim Customer"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F4D2CA5D-5979-45CC-8CF9-EFB4FEDE5F51}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim Customer"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Dim Customer\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Customer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim Customer\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PersonID]"
+                      cachedDataType="i4"
+                      cachedName="PersonID"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]" />
+                    <inputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="AccountNumber"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      dataType="i4"
+                      name="PersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AccountNumber" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim Customer\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    c.CustomerID, 
+    c.PersonID, 
+    p.FirstName, 
+    p.LastName, 
+    c.AccountNumber 
+FROM Sales.Customer c
+LEFT JOIN Person.Person p ON c.PersonID = p.BusinessEntityID;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim Customer\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PersonID]"
+                      name="PersonID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      length="10"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNumber]"
+                      name="AccountNumber"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PersonID]"
+                      dataType="i4"
+                      name="PersonID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="AccountNumber" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonID]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PersonID]"
+                      name="PersonID" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNumber]"
+                      name="AccountNumber" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Dim Customer.Paths[OLE DB Source Output]"
+              endId="Package\Load Dim Customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Dim Customer\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load Dim Product"
       DTS:CreationName="Microsoft.Pipeline"
@@ -90,8 +527,8 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
               <connections>
                 <connection
                   refId="Package\Load Dim Product\Load Dim ProDuct.Connections[OleDbConnection]"
-                  connectionManagerID="{74446328-34B0-4EFE-8950-2FC03C16A0A7}:invalid"
-                  connectionManagerRefId="{74446328-34B0-4EFE-8950-2FC03C16A0A7}:invalid"
+                  connectionManagerID="{74446328-34B0-4EFE-8950-2FC03C16A0A7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SRC_AdventureWorks]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -288,8 +725,8 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
               <connections>
                 <connection
                   refId="Package\Load Dim Product\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{B86C5DB5-B152-4F72-9A6E-D8244EF92944}:invalid"
-                  connectionManagerRefId="{B86C5DB5-B152-4F72-9A6E-D8244EF92944}:invalid"
+                  connectionManagerID="{B86C5DB5-B152-4F72-9A6E-D8244EF92944}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-HQ6M3AJR_SQLEXPRESS01.AdventureWorks_DWH]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -405,7 +842,377 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim Territory"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{220A9B77-9EC8-4F3F-98EB-58C63EF42AB6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim Territory"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Dim Territory\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Territory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim Territory\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TerritoryName"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryName]" />
+                    <inputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TerritoryGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TerritoryGroup"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryGroup]"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryKey]"
+                      dataType="i4"
+                      name="TerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryGroup" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim Territory\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Territory\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Territory\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim Territory\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    TerritoryID, 
+    Name AS TerritoryName, 
+    CountryRegionCode, 
+    [Group] AS TerritoryGroup 
+FROM Sales.SalesTerritory;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim Territory\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-HQ6M3AJR\SQLEXPRESS01.AdventureWorks2022]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryName]"
+                      length="50"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryName]"
+                      name="TerritoryName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryGroup]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryGroup]"
+                      length="50"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].Columns[TerritoryGroup]"
+                      name="TerritoryGroup"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      name="TerritoryGroup" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryName]"
+                      name="TerritoryName" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryGroup]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TerritoryGroup]"
+                      name="TerritoryGroup" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Dim Territory.Paths[OLE DB Source Output]"
+              endId="Package\Load Dim Territory\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Dim Territory\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE19A0A2-7E7F-44A9-A79C-AF10BB19285B}"
+      DTS:From="Package\Load Dim Product"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Dim Territory" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA80D04E-F621-46DA-BE34-AE5BA538A48E}"
+      DTS:From="Package\Load Dim Territory"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Dim Customer" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -417,11 +1224,63 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Load Dim Product"
-          TopLeft="384.999978964528,149.933332290716" />
+          TopLeft="320.833315803773,45.933333013919" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Load Dim Territory"
+          TopLeft="319.666649501357,158.033332272636" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Dim Customer"
+          TopLeft="311.333318262465,267.766665051513" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="401.649982652565,87.533333013919">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.4999992587165"
+              Start="0,0"
+              End="0,62.9999992587165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.9999992587165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="399.099983881911,199.633332272636">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.1333327788777"
+              Start="0,0"
+              End="0,60.6333327788777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.6333327788777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -431,13 +1290,13 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163.2,41.6"
-          Id="Package\Load Dim Product\Load Dim ProDuct"
-          TopLeft="255.49999627471,96.4999986439944" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Load Dim Product\OLE DB Destination"
           TopLeft="258.999996140599,223.99999666214" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Load Dim Product\Load Dim ProDuct"
+          TopLeft="255.49999627471,96.4999986439944" />
         <EdgeLayout
           Id="Package\Load Dim Product.Paths[OLE DB Source Output]"
           TopLeft="340.849996207654,138.099998643994">
@@ -473,6 +1332,136 @@ LEFT JOIN Production.ProductCategory pc ON ps.ProductCategoryID = pc.ProductCate
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Dim Product\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Dim Territory">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Load Dim Territory\OLE DB Source"
+          TopLeft="285.499995827675,85.4999988079071" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Dim Territory\OLE DB Destination"
+          TopLeft="286.499996259809,225.499997168779" />
+        <EdgeLayout
+          Id="Package\Load Dim Territory.Paths[OLE DB Source Output]"
+          TopLeft="361.499995827675,127.099998807907">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.6000004321336,98.3999983608722"
+              Start="0,0"
+              End="10.6000004321336,90.8999983608722">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.1999991804361" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.1999991804361"
+                    Point2="0,49.1999991804361"
+                    Point3="4,49.1999991804361" />
+                  <mssgle:LineSegment
+                    End="6.60000043213364,49.1999991804361" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.60000043213364,49.1999991804361"
+                    Point2="10.6000004321336,49.1999991804361"
+                    Point3="10.6000004321336,53.1999991804361" />
+                  <mssgle:LineSegment
+                    End="10.6000004321336,90.8999983608722" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Territory\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Territory\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Dim Customer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Load Dim Customer\OLE DB Source"
+          TopLeft="312.499995425344,73.4999989867211" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Dim Customer\OLE DB Destination"
+          TopLeft="299.499996066093,207.499997437" />
+        <EdgeLayout
+          Id="Package\Load Dim Customer.Paths[OLE DB Source Output]"
+          TopLeft="386.799995745719,115.099998986721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92.3999984502792"
+              Start="0,0"
+              End="0,84.8999984502792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.8999984502792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Customer\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim Customer\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
