@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{799C0E6D-6976-4D92-A538-A22B1A3E0032}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{F5352610-6913-4417-B31B-E4769EAAEAEC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1325,19 +1325,23 @@ where [refTable].[CustomerID] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Fact_Sales\Lookup Customer_SK.Inputs[Lookup Input].Columns[CustomerID]"
+                      refId="Package\Load Fact_Sales\Lookup Customer_SK.Inputs[Lookup Input].Columns[CustomerKey]"
                       cachedDataType="i4"
                       cachedName="CustomerID"
-                      lineageId="Package\Load Fact_Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Load Fact_Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
                           name="JoinToReferenceColumn">CustomerID</property>
                         <property
-                          dataType="System.Null"
+                          dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
+                          name="CopyFromReferenceColumn">CustomerKey</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1352,22 +1356,6 @@ where [refTable].[CustomerID] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Load Fact_Sales\Lookup Customer_SK.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Fact_Sales\Lookup Customer_SK.Outputs[Lookup Match Output].Columns[Customer_SK]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Load Fact_Sales\Lookup Customer_SK.Outputs[Lookup Match Output].Columns[Customer_SK]"
-                      name="Customer_SK"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">CustomerKey</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -1828,6 +1816,12 @@ where [refTable].[TerritoryID] = ?</property>
                       cachedName="TerritoryKey"
                       externalMetadataColumnId="Package\Load Fact_Sales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Territory_SK]"
                       lineageId="Package\Load Fact_Sales\Lookup Territory.Outputs[Lookup Match Output].Columns[TerritoryKey]" />
+                    <inputColumn
+                      refId="Package\Load Fact_Sales\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\Load Fact_Sales\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Customer_SK]"
+                      lineageId="Package\Load Fact_Sales\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2469,6 +2463,14 @@ JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID;</propert
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Fact_Sales\Lookup Product_SK"
+          TopLeft="337.166650184328,143.833332579997" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Fact_Sales\OLE DB Destination"
+          TopLeft="325.499982515972,488.366665033433" />
+        <NodeLayout
           Size="152,41.6"
           Id="Package\Load Fact_Sales\OLE DB Source"
           TopLeft="345.49998142322,15.0333332670397" />
@@ -2477,29 +2479,67 @@ JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID;</propert
           Id="Package\Load Fact_Sales\Lookup Customer_SK"
           TopLeft="340.833314711022,266.066664816472" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Load Fact_Sales\Lookup Product_SK"
-          TopLeft="337.166650184328,143.833332579997" />
+          Size="154.4,41.6"
+          Id="Package\Load Fact_Sales\Lookup Territory"
+          TopLeft="350.499981150032,400.63333102511" />
         <EdgeLayout
-          Id="Package\Load Fact_Sales.Paths[OLE DB Source Output]"
-          TopLeft="421.933315803774,56.6333332670397">
+          Id="Package\Load Fact_Sales.Paths[Lookup Match Output2]"
+          TopLeft="427.699981150032,442.23333102511">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,87.1999993129572"
+              EndConnector="-16.5999986340603,46.1333340083231"
               Start="0,0"
-              End="0,79.6999993129572">
+              End="-16.5999986340603,38.6333340083231">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.6999993129572" />
+                    End="0,19.0666670041615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0666670041615"
+                    Point2="0,23.0666670041615"
+                    Point3="-4,23.0666670041615" />
+                  <mssgle:LineSegment
+                    End="-12.5999986340603,23.0666670041615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.5999986340603,23.0666670041615"
+                    Point2="-16.5999986340603,23.0666670041615"
+                    Point3="-16.5999986340603,27.0666670041615" />
+                  <mssgle:LineSegment
+                    End="-16.5999986340603,38.6333340083231" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-56.4913860357801,28.0666670041615,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact_Sales.Paths[Lookup Match Output1]"
+          TopLeft="429.266647930527,307.666664816472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92.9666662086377"
+              Start="0,0"
+              End="0,85.4666662086377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.4666662086377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,36.9286456043189,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2538,72 +2578,26 @@ JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID;</propert
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Load Fact_Sales\Lookup Territory"
-          TopLeft="350.499981150032,400.63333102511" />
         <EdgeLayout
-          Id="Package\Load Fact_Sales.Paths[Lookup Match Output1]"
-          TopLeft="429.266647930527,307.666664816472">
+          Id="Package\Load Fact_Sales.Paths[OLE DB Source Output]"
+          TopLeft="421.933315803774,56.6333332670397">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,92.9666662086377"
+              EndConnector="0,87.1999993129572"
               Start="0,0"
-              End="0,85.4666662086377">
+              End="0,79.6999993129572">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,85.4666662086377" />
+                    End="0,79.6999993129572" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,36.9286456043189,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Load Fact_Sales\OLE DB Destination"
-          TopLeft="325.499982515972,488.366665033433" />
-        <EdgeLayout
-          Id="Package\Load Fact_Sales.Paths[Lookup Match Output2]"
-          TopLeft="427.699981150032,442.23333102511">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16.5999986340603,46.1333340083231"
-              Start="0,0"
-              End="-16.5999986340603,38.6333340083231">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0666670041615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0666670041615"
-                    Point2="0,23.0666670041615"
-                    Point3="-4,23.0666670041615" />
-                  <mssgle:LineSegment
-                    End="-12.5999986340603,23.0666670041615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5999986340603,23.0666670041615"
-                    Point2="-16.5999986340603,23.0666670041615"
-                    Point3="-16.5999986340603,27.0666670041615" />
-                  <mssgle:LineSegment
-                    End="-16.5999986340603,38.6333340083231" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.4913860357801,28.0666670041615,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2669,7 +2663,7 @@ JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID;</propert
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
