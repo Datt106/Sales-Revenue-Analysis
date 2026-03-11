@@ -11,7 +11,7 @@ Dự án này xây dựng một luồng dữ liệu (Data Pipeline) tự động
 
 ## 🏗 Kiến trúc dữ liệu (Data Architecture)
 *(Chèn ảnh mô hình kiến trúc của bạn vào đây)*
-![Data Architecture](./images/architecture.png)
+![Data Architecture](./image/architecture.png)
 
 Dự án áp dụng mô hình thiết kế **Star Schema** cho Data Warehouse, bao gồm:
 * **Fact Table:** `Fact_Sales` (Lưu trữ các độ đo về doanh thu, số lượng bán, chiết khấu...)
@@ -19,7 +19,7 @@ Dự án áp dụng mô hình thiết kế **Star Schema** cho Data Warehouse, b
 
 ## 🔄 Luồng xử lý ETL (ETL Workflow)
 *(Chèn ảnh Control Flow và Data Flow trong SSIS vào đây)*
-![SSIS Control Flow](./images/ssis_control_flow.png)
+![SSIS Control Flow](./image/ssis_control_flow.png)
 
 Luồng SSIS (`.dtsx`) thực hiện các bước sau:
 1. **Extract:** Rút trích dữ liệu từ hệ thống nguồn (Database/Flat files).
@@ -45,7 +45,7 @@ Luồng SSIS (`.dtsx`) thực hiện các bước sau:
 
 ## 📈 Kết quả và Báo cáo trực quan
 *(Chèn ảnh chụp Dashboard Power BI hoặc báo cáo của bạn vào đây)*
-![Power BI Dashboard](./images/powerbi_dashboard.png)
+![Power BI Dashboard](./image/powerbi_dashboard.png)
 
 ## 👨‍💻 Thông tin tác giả
 * **Họ và tên:** Nguyễn Tiến Đạt
