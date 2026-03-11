@@ -10,7 +10,6 @@ Dự án này xây dựng một luồng dữ liệu (Data Pipeline) tự động
 * **Nguồn dữ liệu (Dataset):** AdventureWorks (hoặc tên dataset thực tế của bạn)
 
 ## 🏗 Kiến trúc dữ liệu (Data Architecture)
-*(Chèn ảnh mô hình kiến trúc của bạn vào đây)*
 ![Data Architecture](./image/architecture.png)
 
 Dự án áp dụng mô hình thiết kế **Star Schema** cho Data Warehouse, bao gồm:
@@ -18,7 +17,6 @@ Dự án áp dụng mô hình thiết kế **Star Schema** cho Data Warehouse, b
 * **Dimension Tables:** `Dim_Date`, `Dim_Product`, `Dim_Customer`, `Dim_Location`...
 
 ## 🔄 Luồng xử lý ETL (ETL Workflow)
-*(Chèn ảnh Control Flow và Data Flow trong SSIS vào đây)*
 ![SSIS Control Flow](./image/ssis_control_flow.png)
 
 Luồng SSIS (`.dtsx`) thực hiện các bước sau:
@@ -44,7 +42,6 @@ Luồng SSIS (`.dtsx`) thực hiện các bước sau:
 4. **Xem báo cáo:** Mở file `Sales_Dashboard.pbix` bằng Power BI, chọn *Refresh* để cập nhật dữ liệu mới nhất từ Data Warehouse.
 
 ## 📈 Kết quả và Báo cáo trực quan
-*(Chèn ảnh chụp Dashboard Power BI hoặc báo cáo của bạn vào đây)*
 ![Power BI Dashboard](./image/powerbi_dashboard.png)
 
 ## 👨‍💻 Thông tin tác giả
