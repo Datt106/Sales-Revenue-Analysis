@@ -7,7 +7,7 @@ Dự án này xây dựng một luồng dữ liệu (Data Pipeline) tự động
 * **Hệ quản trị cơ sở dữ liệu:** SQL Server
 * **Công cụ ETL:** SQL Server Integration Services (SSIS) - Visual Studio
 * **Công cụ trực quan hóa (BI):** Power BI
-* **Nguồn dữ liệu (Dataset):** AdventureWorks (hoặc tên dataset thực tế của bạn)
+* **Nguồn dữ liệu (Dataset):** AdventureWorks (https://drive.google.com/file/d/1OKYYXDvffc5ocrzckrhPO2NJx1QS3TfJ/view?usp=sharing)
 
 ## 🏗 Kiến trúc dữ liệu (Data Architecture)
 ![Data Architecture](./image/architecture.png)
