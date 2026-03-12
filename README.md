@@ -34,7 +34,7 @@ Luồng SSIS (`.dtsx`) thực hiện các bước sau:
 * Power BI Desktop
 
 ### Các bước thực thi
-1. **Khởi tạo Database:** Chạy file script `Create_DataWarehouse.sql` trong SSMS để tạo các bảng Fact và Dimension.
+1. **Khởi tạo Database:** Chạy file 'Database_Script' trong SSMS để tạo các bảng Fact và Dimension.
 2. **Cấu hình Connection:** Mở solution SSIS trong Visual Studio. Cập nhật lại các chuỗi kết nối (Connection Managers) trỏ về server SQL của bạn.
 3. **Chạy ETL:** Thực thi (Start) các package theo thứ tự:
    * `Load_Dimensions.dtsx` (Đổ dữ liệu vào các bảng Dim trước)
