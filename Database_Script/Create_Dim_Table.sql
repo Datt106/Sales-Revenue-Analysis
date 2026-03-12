@@ -26,3 +26,12 @@ CREATE TABLE Dim_Date (
     Quarter TINYINT NOT NULL,          -- Quý (1-4)
     Year INT NOT NULL                  -- Năm (ví dụ: 2026)
 );
+
+CREATE TABLE Dim_Product (
+    Product_SK INT IDENTITY(1,1) PRIMARY KEY,   -- Khóa chính
+    ProductID INT NOT NULL,
+    ProductName NVARCHAR(150),
+    ProductNumber NVARCHAR(50),
+    SubcategoryName NVARCHAR(100),
+    CategoryName NVARCHAR(100)
+);
