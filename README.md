@@ -14,7 +14,7 @@ Dự án này xây dựng một luồng dữ liệu (Data Pipeline) tự động
 
 Dự án áp dụng mô hình thiết kế **Star Schema** cho Data Warehouse, bao gồm:
 * **Fact Table:** `Fact_Sales` (Lưu trữ các độ đo về doanh thu, số lượng bán, chiết khấu...)
-* **Dimension Tables:** `Dim_Date`, `Dim_Product`, `Dim_Customer`, `Dim_Location`...
+* **Dimension Tables:** `Dim_Date`, `Dim_Product`, `Dim_Customer`, `Dim_Territory`
 
 ## 🔄 Luồng xử lý ETL (ETL Workflow)
 ![SSIS Control Flow](./image/ssis_control_flow.png)
